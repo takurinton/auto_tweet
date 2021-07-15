@@ -5,9 +5,9 @@ const postTweet = require('./postTweet');
 const main = async () => {
     const sentence = await getTweet();
     const text = createSentence(sentence);
-    console.log(text)
-    console.log(text.length)
     postTweet(text);
+    console.log('tweet text: ', text)
+    console.log('tweet length: ', text.length)
 };
 
 main();
