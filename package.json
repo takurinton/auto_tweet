@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "tweet": "node src/index.js", 
+    "deploy": "git add . && git commit 'deploy' && git push heroku main", 
     "build": "echo 'takurinton'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
