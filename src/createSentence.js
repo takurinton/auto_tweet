@@ -55,7 +55,6 @@ const createSentence = (text) => {
         const dict = makeDict(_text);
         const sentence = makeSentence(dict);
         res += sentence;
-        console.log(sentence);
     }
     return res;
 };

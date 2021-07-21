@@ -2,12 +2,21 @@ const createSentence = require('./createSentence');
 const getTweet = require('./getTweet');
 const postTweet = require('./postTweet');
 
-const main = async () => {
+const tweet = async () => {
     const sentence = await getTweet();
-    const text = createSentence(sentence);
-    postTweet(text);
-    console.log('tweet text: ', text)
-    console.log('tweet length: ', text.length)
+    text = createSentence(sentence);
+    console.log(`text content: ${text}`);
+    console.log(`text length: ${text.length}`);
+    if (text.length === 0 || text.length > 140) {
+        console.log('tweet length is 140 over. restart programm.')
+        tweet();
+    } else {
+        postTweet(text);
+    };
+}
+
+const main = async () => {
+    tweet();
 };
 
 main();
