@@ -3,8 +3,13 @@ const getTweet = require('./getTweet');
 const postTweet = require('./postTweet');
 
 const tweet = async () => {
-    const sentence = await getTweet();
-    text = createSentence(sentence);
+    let text = '';
+    try {
+        const sentence = await getTweet();
+        text = createSentence(sentence);
+    } catch(err) {
+        console.error(err);
+    };
     console.log(`text content: ${text}`);
     console.log(`text length: ${text.length}`);
     if (text.length === 0 || text.length > 140) {
