@@ -7,7 +7,7 @@ const getTweet = async () => {
         const text = res.map(tweet => tweet.text).join('')
         return text;
     } catch(err) {
-        console.err(err);
+        console.error(err);
     }
 };
 
